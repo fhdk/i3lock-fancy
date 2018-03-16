@@ -4,8 +4,8 @@
 set -o errexit -o noclobber -o nounset
 
 # get path where the script is located to find the lock icon
-scriptpath=$("/usr/share/i3lock-fancy/")
-#scriptpath=${scriptpath%/*}
+scriptpath=$("/usr/share/i3lock-fancy")
+scriptpath=${scriptpath%/*}
 
 hue=(-level "0%,100%,0.6")
 effect=(-filter Gaussian -resize 20% -define "filter:sigma=1.5" -resize 500.5%)
