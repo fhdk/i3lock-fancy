@@ -65,7 +65,7 @@ while true ; do
     case "$1" in
         -h|--help)
             printf "Usage: %s [options]\n\n%s\n\n" "${0##*/}" "$options"; exit 1 ;;
-        -d|--desktop) desktop=$(command -V wmctrl) ; shift ;;
+        -d|--desktop) desktop=$(command -V xdotool) ; shift ;;
         -g|--greyscale) hue=(-level "0%,100%,0.6" -set colorspace Gray -average) ; shift ;;
         -p|--pixelate) effect=(-scale 10% -scale 1000%) ; shift ;;
         -f|--font)
@@ -120,7 +120,7 @@ convert "$image" "${hue[@]}" "${effect[@]}" -font "$font" -pointsize 26 -fill "$
 # If invoked with -d/--desktop, we'll attempt to minimize all windows (ie. show
 # the desktop) before locking.
 if ${desktop}; then
-    wmctrl -kon
+    xdotool key super+d
 fi
 
 # try to use i3lock with prepared parameters
@@ -132,6 +132,6 @@ fi
 # As above, if we were passed -d/--desktop, we'll attempt to restore all windows
 # after unlocking.
 if ${desktop}; then
-    wmctrl -koff
+    xdotool key super+d
 fi
 
