@@ -4,14 +4,12 @@
 set -o errexit -o noclobber -o nounset
 # get path where the script is located to find the lock icon
 scriptpath="/usr/share/i3lock-fancy/"
-
 hue=(-level "0%,100%,0.6")
 effect=(-filter Gaussian -resize 20% -define "filter:sigma=1.5" -resize 500.5%)
 # default system sans-serif font
 font=$(convert -list font | awk "{ a[NR] = \$2 } /family: $(fc-match sans -f "%{family}\n")/ { print a[NR-1]; exit }")
 image=$(mktemp --suffix=.png)
 shot=(import -window root)
-
 desktop=""
 i3lock_cmd=(i3lock -i "$image")
 shot_custom=false
@@ -84,6 +82,10 @@ while true ; do
         *) echo "error" ; exit 1 ;;
     esac
 done
+
+if ${desktop}; then
+    ${desktop}="wmctrl"
+fi
 
 if "$shot_custom" && [[ $# -gt 0 ]]; then
     shot=("$@");
