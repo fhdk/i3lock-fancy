@@ -117,7 +117,7 @@ convert "$image" "${hue[@]}" "${effect[@]}" -font "$font" -pointsize 26 -fill "$
 
 # If invoked with -d/--desktop, we'll attempt to minimize all windows (ie. show
 # the desktop) before locking.
-${desktop} ${desktop:+-kon}
+command -- ${desktop} ${desktop:+-kon}
 
 # try to use i3lock with prepared parameters
 if ! "${i3lock_cmd[@]}" "${param[@]}" >/dev/null 2>&1; then
@@ -127,4 +127,4 @@ fi
 
 # As above, if we were passed -d/--desktop, we'll attempt to restore all windows
 # after unlocking.
-${desktop} ${desktop:+-koff}
+command -- ${desktop} ${desktop:+-koff}
