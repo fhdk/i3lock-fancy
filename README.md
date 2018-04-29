@@ -9,17 +9,16 @@ website: [github pages website](http://meskarune.github.io/i3lock-fancy/)
 
 Dependencies
 ------------
-* <s>[i3lock-color-git](https://github.com/eBrnd/i3lock-color)</s>
-* [i3lock-color-git](https://github.com/PandorasFox/i3lock-color) - this is a fork of i3lock-color that is kept up to date with i3lock
+* i3lock
 * imagemagick
 * bash
 * awk
 * util-linux
+* scrot
 
 Optional Dependencies
 ---------------------
 * wmctrl
-* a screenshot utility such as scrot or maim.
 
 Installation
 ------------
