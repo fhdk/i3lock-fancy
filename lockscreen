@@ -21,6 +21,7 @@ OPTIONS="Options:
     -g, --greyscale  Set background to greyscale instead of color.
     -p, --pixelate   Pixelate the background instead of blur, runs faster.
     -f <fontname>, --font <fontname>  Set a custom font. Type 'convert -list font' in a terminal to get a list."
+    -- scrot
 
 # move pipefail down as for some reason "convert -list font" returns 1
 set -o pipefail
