@@ -1,11 +1,7 @@
 i3lock-fancy
 ============
 
-This is an i3lock bash script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text
-
-website: [github pages website](http://meskarune.github.io/i3lock-fancy/)
-
-![screen shot of lockscreen](https://raw.githubusercontent.com/meskarune/i3lock-fancy/master/screenshot.png)
+This is an i3lock bash script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text. Modified to dual-monitors using standard i3lock
 
 Dependencies
 ------------
@@ -33,24 +29,16 @@ Usage
     lock [options]
     
     Options:
-        -h, --help       This help menu.
-    
+        -h, --help       This help menu.   
         -d, --desktop    Attempt to minimize all windows before locking. Requires wmctrl.
-    
-        -g, --greyscale  Set background to greyscale instead of color.
-    
-        -p, --pixelate   Pixelate the background instead of blur, runs faster.
-    
+        -g, --greyscale  Set background to greyscale instead of colo
+        -p, --pixelate   Pixelate the background instead of blur, runs faster
         -f <fontname>, --font <fontname>  Set a custom font.
-    
-        -t <text>, --text <text> Set a custom text prompt.
-
+        -t <text>, --text <text> Set a custom text prompt
         -l, --listfonts  Display a list of possible fonts for use with -f/--font.
                          Note: this option will not lock the screen, it displays
                          the list and exits immediately.
-
         -n, --nofork     Do not fork i3lock after starting.
-    
         --               Must be last option. Set command to use for taking a
                          screenshot. Default is 'import -window root'. Using 'scrot'
                          or 'maim' will increase script speed and allow setting
